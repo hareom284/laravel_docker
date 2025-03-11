@@ -1,0 +1,26 @@
+<?php
+
+namespace Src\Company\Document\Application\UseCases\Commands;
+
+use Src\Common\Domain\CommandInterface;
+use Src\Company\Document\Domain\Model\Entities\Contract;
+use Src\Company\Document\Domain\Repositories\ContractRepositoryInterface;
+use Src\Company\Document\Domain\Repositories\HandoverCertificateRepositoryInterface;
+
+class SignManagerHandoverCertificateCommand implements CommandInterface
+{
+    private HandoverCertificateRepositoryInterface $repository;
+
+    public function __construct(
+        private $request
+    )
+    {
+        $this->repository = app()->make(HandoverCertificateRepositoryInterface::class);
+    }
+
+    public function execute(): mixed
+    {
+        // authorize('storeAreaOfWork', DocumentPolicy::class);
+        return $this->repository->managerSign($this->request);
+    }
+}

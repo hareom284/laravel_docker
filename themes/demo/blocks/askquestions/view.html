@@ -1,0 +1,246 @@
+<style>
+    /* stylelint-disable */
+
+.line {
+    margin-left: 10px;
+    width: 1px;
+    height: 100px;
+    background-color: #001a8f;
+  }
+  .animated_img {
+    scale: 1;
+    transition: all 0.3s ease-in-out;
+  }
+  .animated_img_frame {
+    transform: translateY(0px);
+    transition: all 0.3s ease-in-out;
+  }
+  .animated_img_frame:hover {
+    transform: translateY(20px);
+    transition: all 0.3s ease-in-out;
+  }
+  .animated_img:hover {
+    scale: 1.1;
+    transform: translateY(-20px);
+    transition: all 0.3s ease-in-out;
+  }
+  .sliderbar{
+      padding: 0px 64px 0px 64px !important;
+    }
+  .dicount{
+    font-size: 29px;
+    line-height:44px;
+  }
+  .special-text{
+    font-weight:400;
+    font-size: 56px;
+    line-height: 67.2px;
+    letter-spacing: 8.5%;
+  }
+  .discount-text
+  {
+    font-weight: 400;
+    font-size: 108px;
+    line-height: 114px;
+  }
+  .cusbutton
+  {
+    border-radius:0px !important;
+    font-size: 16px;
+    line-height: 24px;
+    padding:12px 24px 12px 24px;
+  }
+  .howitwork{
+    padding:80px 64px 80px 64px;
+  }
+
+  .font-16
+  {
+    font-size: 16px !important;
+    font-weight: 400;
+  }
+  .welcome-howit
+  {
+    font-size: 48px;
+    line-height: 58px;
+  }
+
+  .brand-image
+  {
+    width:140px !important;
+    height:35px !important;
+  }
+  .callforaction
+  {
+    width: 50% !important;
+  }
+  @media screen and (max-width: 460px) {
+    .line {
+      margin-top: 10%;
+      margin-left: 4%;
+    }
+
+    .sliderbar{
+      padding: 0px 20px 0px 14px;
+    }
+    .dicount{
+    font-size: 10px;
+    line-height: 10px;
+  }
+  .special-text{
+    font-weight:400;
+    font-size: 16px;
+    line-height: 10px;
+    letter-spacing: 8.5%;
+  }
+
+  .discount-text
+  {
+    font-weight: 400;
+    line-height: 10px;
+    font-size: 28px;
+  }
+
+  .cusbutton
+  {
+    border-radius:0px !important;
+    font-size: 7px !important;
+    line-height: 24px;
+  }
+  .welcome-howit{
+    font-size: 12px !important;
+    line-height: 20px;
+  }
+  .brand-image
+  {
+    width:40px !important;
+    height:20px !important;
+    aspect-ratio: 4/2;
+    object-fit: contain;
+    mix-blend-mode: darken;
+
+  }
+  .custom-width
+  {
+    width: 100% !important;
+  }
+  }
+
+
+</style>
+<div class="row">
+    <div class="col-12 bg-dark p-5">
+        <div class="row">
+           <div class="col-lg-6 col-sm-12 col-md-12">
+               <h1 class="text-primary">Frequently asked questions</h1>
+               <p class="text-primary">Frequently asked questions ordered by popularity. Remember that if the visitor has not committed to the call to action, they may still have questions (doubts) that can be answered.</p>
+               <button class="btn btn-primary border-0">Contact Us</button>
+           </div>
+           <div class="col-lg-6 col-sm-12 col-md-12">
+               <div class="row">
+                   <div class="col-md mb-4 mb-md-2">
+                     <div class="accordion mt-3" id="accordionExample">
+                       <div class="accordion-item">
+                         <h2 class="accordion-header" id="headingOne">
+                           <button
+                             type="button"
+                             class="accordion-button collapsed"
+                             data-bs-toggle="collapse"
+                             data-bs-target="#accordionOne"
+                             aria-expanded="false"
+                             aria-controls="accordionOne">
+                             Question text goes here
+                           </button>
+                         </h2>
+
+                         <div
+                           id="accordionOne"
+                           class="accordion-collapse collapse"
+                           data-bs-parent="#accordionExample">
+                           <div class="accordion-body">
+                             Lemon drops chocolate cake gummies carrot cake chupa chups muffin topping. Sesame snaps icing
+                             marzipan gummi bears macaroon dragée danish caramels powder. Bear claw dragée pastry topping
+                             soufflé. Wafer gummi bears marshmallow pastry pie.
+                           </div>
+                         </div>
+                       </div>
+                       <div class="accordion-item">
+                         <h2 class="accordion-header" id="headingTwo">
+                           <button
+                             type="button"
+                             class="accordion-button collapsed"
+                             data-bs-toggle="collapse"
+                             data-bs-target="#accordionTwo"
+                             aria-expanded="false"
+                             aria-controls="accordionTwo">
+                             Question text goes here
+                           </button>
+                         </h2>
+                         <div
+                           id="accordionTwo"
+                           class="accordion-collapse collapse"
+                           aria-labelledby="headingTwo"
+                           data-bs-parent="#accordionExample">
+                           <div class="accordion-body">
+                             Dessert ice cream donut oat cake jelly-o pie sugar plum cheesecake. Bear claw dragée oat cake
+                             dragée ice cream halvah tootsie roll. Danish cake oat cake pie macaroon tart donut gummies.
+                             Jelly beans candy canes carrot cake. Fruitcake chocolate chupa chups.
+                           </div>
+                         </div>
+                       </div>
+                       <div class="accordion-item">
+                         <h2 class="accordion-header" id="headingThree">
+                           <button
+                             type="button"
+                             class="accordion-button collapsed"
+                             data-bs-toggle="collapse"
+                             data-bs-target="#accordionThree"
+                             aria-expanded="false"
+                             aria-controls="accordionThree">
+                             Question text goes here
+                           </button>
+                         </h2>
+                         <div
+                           id="accordionThree"
+                           class="accordion-collapse collapse"
+                           aria-labelledby="headingThree"
+                           data-bs-parent="#accordionExample">
+                           <div class="accordion-body">
+                             Oat cake toffee chocolate bar jujubes. Marshmallow brownie lemon drops cheesecake. Bonbon
+                             gingerbread marshmallow sweet jelly beans muffin. Sweet roll bear claw candy canes oat cake
+                             dragée caramels. Ice cream wafer danish cookie caramels muffin.
+                           </div>
+                         </div>
+                       </div>
+                       <div class="accordion-item">
+                           <h2 class="accordion-header" id="headingFour">
+                             <button
+                               type="button"
+                               class="accordion-button collapsed"
+                               data-bs-toggle="collapse"
+                               data-bs-target="#accordionFour"
+                               aria-expanded="false"
+                               aria-controls="accordionFour">
+                               Question text goes here
+                             </button>
+                           </h2>
+                           <div
+                             id="accordionFour"
+                             class="accordion-collapse collapse"
+                             aria-labelledby="headingFour"
+                             data-bs-parent="#accordionExample">
+                             <div class="accordion-body">
+                               Dessert ice cream donut oat cake jelly-o pie sugar plum cheesecake. Bear claw dragée oat cake
+                               dragée ice cream halvah tootsie roll. Danish cake oat cake pie macaroon tart donut gummies.
+                               Jelly beans candy canes carrot cake. Fruitcake chocolate chupa chups.
+                             </div>
+                           </div>
+                         </div>
+                     </div>
+                   </div>
+
+                 </div>
+           </div>
+        </div>
+      </div>
+</div>

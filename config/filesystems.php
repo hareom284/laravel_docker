@@ -13,20 +13,7 @@ return [
     |
     */
 
-    'default' => env('FILESYSTEM_DRIVER', 'local'),
-
-    /*
-    |--------------------------------------------------------------------------
-    | Default Cloud Filesystem Disk
-    |--------------------------------------------------------------------------
-    |
-    | Many applications store files both locally and in the cloud. For this
-    | reason, you may specify a default "cloud" driver here. This driver
-    | will be bound as the Cloud disk implementation in the container.
-    |
-    */
-
-    'cloud' => env('FILESYSTEM_CLOUD', 's3'),
+    'default' => env('FILESYSTEM_DISK', 'local'),
 
     /*
     |--------------------------------------------------------------------------
@@ -35,7 +22,7 @@ return [
     |
     | Here you may configure as many filesystem "disks" as you wish, and you
     | may even configure multiple disks of the same driver. Defaults have
-    | been setup for each driver as an example of the required options.
+    | been set up for each driver as an example of the required values.
     |
     | Supported Drivers: "local", "ftp", "sftp", "s3"
     |
@@ -46,12 +33,121 @@ return [
         'local' => [
             'driver' => 'local',
             'root' => storage_path('app'),
+            'throw' => false,
         ],
 
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
-            'url' => env('APP_URL').'/storage',
+            'url' => env('APP_URL') . '/storage',
+            'visibility' => 'public',
+            'throw' => false,
+        ],
+
+        'avatars' => [
+            'driver' => 'local',
+            'root' => storage_path('app/avatars'),
+            'visibility' => 'public',
+        ],
+
+        'media_user' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/users'),
+            'url' => env('APP_URL') . '/storage/users',
+            'visibility' => 'public',
+        ],
+        'media_organization' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/organization'),
+            'url' => env('APP_URL') . '/storage/organization',
+            'visibility' => 'public',
+        ],
+
+        'media_students' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/students'),
+            'url' => env('APP_URL') . '/storage/students',
+            'visibility' => 'public',
+        ],
+
+        'media_teachers' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/teachers'),
+            'url' => env('APP_URL') . '/storage/teachers',
+            'visibility' => 'public',
+        ],
+
+        'media_sitelogo' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/sitelogo'),
+            'url' => env('APP_URL') . '/storage/sitelogo',
+            'visibility' => 'public',
+        ],
+        'media_project_portfolio' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/project_portfolio'),
+            'url' => env('APP_URL') . '/storage/project_portfolio',
+            'visibility' => 'public',
+        ],
+        'media_sitefavico' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/sitefavico'),
+            'url' => env('APP_URL') . '/storage/sitefavico',
+            'visibility' => 'public',
+        ],
+
+        'media_termAndCondition' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/termAndCondition'),
+            'url' => env('APP_URL') . '/storage/termAndCondition',
+            'visibility' => 'public',
+        ],
+
+        'media_termAndCondition_pdf' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/termAndConditionPdf'),
+            'url' => env('APP_URL') . '/storage/termAndConditionPdf',
+            'visibility' => 'public',
+        ],
+
+        'media_termAndCondition_signatures' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/termAndConditionSignature'),
+            'url' => env('APP_URL') . '/storage/termAndConditionSignature',
+            'visibility' => 'public',
+        ],
+
+        'signed_documents' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/signed_documents'),
+            'url' => env('APP_URL') . '/storage/signed_documents',
+            'visibility' => 'public',
+        ],
+
+        'jobsheet_documents' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/jobsheet_documents'),
+            'url' => env('APP_URL') . '/storage/jobsheet_documents',
+            'visibility' => 'public',
+        ],
+
+        'qr_codes' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/qr_codes'),
+            'url' => env('APP_URL') . '/storage/qr_codes',
+            'visibility' => 'public',
+        ],
+
+        'project_progress_inprogress' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/renovation_images'),
+            'url' => env('APP_URL') . '/storage/renovation_images',
+            'visibility' => 'public',
+        ],
+        'project_progress_completed' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/renovation_images'),
+            'url' => env('APP_URL') . '/storage/renovation_images',
             'visibility' => 'public',
         ],
 
@@ -63,6 +159,8 @@ return [
             'bucket' => env('AWS_BUCKET'),
             'url' => env('AWS_URL'),
             'endpoint' => env('AWS_ENDPOINT'),
+            'use_path_style_endpoint' => env('AWS_USE_PATH_STYLE_ENDPOINT', false),
+            'throw' => false,
         ],
 
     ],

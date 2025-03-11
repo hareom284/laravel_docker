@@ -1,0 +1,127 @@
+/* stylelint-disable */
+
+.line {
+    margin-left: 10px;
+    width: 1px;
+    height: 100px;
+    background-color: #001a8f;
+  }
+  .animated_img {
+    scale: 1;
+    transition: all 0.3s ease-in-out;
+  }
+  .animated_img_frame {
+    transform: translateY(0px);
+    transition: all 0.3s ease-in-out;
+  }
+  .animated_img_frame:hover {
+    transform: translateY(20px);
+    transition: all 0.3s ease-in-out;
+  }
+  .animated_img:hover {
+    scale: 1.1;
+    transform: translateY(-20px);
+    transition: all 0.3s ease-in-out;
+  }
+  .sliderbar{
+      padding: 0px 64px 0px 64px !important;
+    }
+  .dicount{
+    font-size: 29px;
+    line-height:44px;
+  }
+  .special-text{
+    font-weight:400;
+    font-size: 56px;
+    line-height: 67.2px;
+    letter-spacing: 8.5%;
+  }
+  .discount-text
+  {
+    font-weight: 400;
+    font-size: 108px;
+    line-height: 114px;
+  }
+  .cusbutton
+  {
+    border-radius:0px !important;
+    font-size: 16px;
+    line-height: 24px;
+    padding:12px 24px 12px 24px;
+  }
+  .howitwork{
+    padding:80px 64px 80px 64px;
+  }
+
+  .font-16
+  {
+    font-size: 16px !important;
+    font-weight: 400;
+  }
+  .welcome-howit
+  {
+    font-size: 48px;
+    line-height: 58px;
+  }
+
+  .brand-image
+  {
+    width:140px !important;
+    height:35px !important;
+  }
+  .callforaction
+  {
+    width: 50% !important;
+  }
+  @media screen and (max-width: 460px) {
+    .line {
+      margin-top: 10%;
+      margin-left: 4%;
+    }
+
+    .sliderbar{
+      padding: 0px 20px 0px 14px;
+    }
+    .dicount{
+    font-size: 10px;
+    line-height: 10px;
+  }
+  .special-text{
+    font-weight:400;
+    font-size: 16px;
+    line-height: 10px;
+    letter-spacing: 8.5%;
+  }
+
+  .discount-text
+  {
+    font-weight: 400;
+    line-height: 10px;
+    font-size: 28px;
+  }
+
+  .cusbutton
+  {
+    border-radius:0px !important;
+    font-size: 7px !important;
+    line-height: 24px;
+  }
+  .welcome-howit{
+    font-size: 12px !important;
+    line-height: 20px;
+  }
+  .brand-image
+  {
+    width:40px !important;
+    height:20px !important;
+    aspect-ratio: 4/2;
+    object-fit: contain;
+    mix-blend-mode: darken;
+
+  }
+  .custom-width
+  {
+    width: 100% !important;
+  }
+  }
+

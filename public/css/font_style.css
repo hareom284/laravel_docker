@@ -1,0 +1,171 @@
+.section-name{
+    display: flex;
+    justify-content: space-between;
+}
+
+.ft-b-14 {
+    font-size: 14px;
+    font-weight: bold;
+
+}
+.ft-b-16 {
+    font-size: 16px;
+    font-weight: bold;
+
+}
+
+.ft-b-12{
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.ft-b{
+  font-weight: bold;
+}
+.ft-12{
+    font-size: 14px;
+}
+
+.ft-i-11{
+    font-size: 13px;
+    font-style: italic;
+}
+
+.ft-i {
+  font-style: italic;
+}
+
+.ft-11 {
+  font-size: 13px;
+}
+
+.ft-10 {
+  font-size: 13px;
+}
+
+.ft-9 {
+  font-size: 13px;
+}
+
+.underline {
+  border-bottom: 2px solid #000;
+}
+.ft-underline{
+  text-decoration: underline;;
+}
+
+/* .underline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 2px;
+  background-color: currentColor;
+} */
+
+* {
+    font-family:  sans-serif;
+    text-rendering: optimizeLegibility;
+}
+
+.pdf-content{
+    padding: 0 0 50px 0;
+}
+.avoid-break {
+    page-break-inside: avoid;
+}
+
+.signature-section{
+    padding-top: 30px;
+}
+thead { display: table-header-group }
+tfoot { display: table-row-group }
+tr { page-break-inside: avoid }
+
+.section-container {
+  page-break-inside: avoid;
+  margin-bottom: 10px;
+  /* min-height: 160px; */
+}
+/* .aow-name {
+  page-break-inside: avoid;
+} */
+
+
+  /* For nested lists, if you want alphabetical markers */
+  ol.alpha {
+    counter-reset: sub-item; /* Create a new instance of the counter for nested items */
+  }
+  ol.alpha li {
+    padding-top: 0 !important;
+  }
+  ol.alpha li::before {
+    counter-increment: sub-item; /* Increment the nested counter */
+    content: counter(sub-item, lower-alpha) ') '; /* Display the counter as a letter followed by a parenthesis */
+  }
+
+  .footer-list li {
+    padding-top: 10px;
+  }
+  .footer-part li {
+    padding-top: 10px;
+  }
+  .break-before {
+    break-before: page;
+  }
+
+  .ft_helvetica{
+    font-family: 'helvetica';
+  }
+
+  .ft_helvetica-thin{
+    font-family: 'helvetica_thin';
+  }
+  .page {
+    page-break-before: always;
+  }
+  .page-after{
+    page-break-after: always;
+  }
+  .twp-terms-text p {
+      margin-bottom: 0 !important;
+      padding-bottom: 0 !important;
+      margin-top: 0 !important;
+      font-size: 11px !important;
+  }
+  .terms-text p {
+      margin-bottom: 0 !important;
+      padding-bottom: 0 !important;
+      margin-top: 0 !important;
+      font-size: 11px !important;
+  }
+
+  .signature-section-twp{
+    font-size: 10px !important;
+  }
+  .signature-section{
+    font-size: 12px !important;
+  }
+
+  .twp-image{
+    width:150px;
+    object-fit:contain;
+  }
+
+  .twp-float-left{
+    float: left;
+  }
+
+ .discount-price{
+   margin-top: 0 !important;
+   margin-bottom:0 !important;
+  }
+
+  .limit-width {
+    width: 77% !important;
+  }
+
+  .tearms{
+    padding-bottom: 15px;
+  }

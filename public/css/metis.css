@@ -1,0 +1,92 @@
+.section-name{
+    display: flex;
+    justify-content: space-between;
+}
+
+.ft-b-14 {
+    font-size: 12px;
+    font-weight: bold;
+    
+}
+
+.ft-b-12{
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.ft-12{
+    font-size: 12px;
+}
+.underline{
+    text-decoration: underline;
+}
+* {
+    font-family:  sans-serif;
+}
+.pdf-content{
+    padding: 0 0 50px 0;
+}
+.avoid-break {
+    page-break-inside: avoid;
+}
+
+.signature-section{
+    padding-top: 30px;
+}
+thead { display: table-header-group }
+tfoot { display: table-row-group }
+tr { page-break-inside: avoid }
+
+/* Reset the list styles */
+ol {
+    counter-reset: item; /* Create a new instance of the counter */
+    padding-left: 0; /* Remove default padding */
+  }
+  li {
+    list-style: none; /* Remove default list styling */
+    position: relative; /* For positioning the pseudo-element */
+    padding-left: 30px; /* Make space for the custom marker */
+  }
+  li::before {
+    counter-increment: item; /* Increment the counter */
+    content: counter(item) ') '; /* Display the counter and close with a parenthesis */
+    position: absolute; /* Position the pseudo-element */
+    left: 0; /* Align to the left */
+  }
+  
+  /* For nested lists, if you want alphabetical markers */
+  ol.alpha {
+    counter-reset: sub-item; /* Create a new instance of the counter for nested items */
+  }
+  ol.alpha li {
+    padding-top: 0 !important;
+  }
+  ol.alpha li::before {
+    counter-increment: sub-item; /* Increment the nested counter */
+    content: counter(sub-item, lower-alpha) ') '; /* Display the counter as a letter followed by a parenthesis */
+  }
+  
+  .footer-list li {
+    padding-top: 10px;
+  }
+  .footer-part li {
+    padding-top: 10px;
+  }
+  .break-before {
+    break-before: page; 
+  }
+
+  .ft_helvetica{
+    font-family: 'helvetica';
+  }
+
+  .ft_helvetica-thin{
+    font-family: 'helvetica_thin';
+  }
+  .page {
+    /* overflow: hidden; */
+    page-break-before: always;
+  }
+  .summary-section{
+    padding-top: 10px;
+  }

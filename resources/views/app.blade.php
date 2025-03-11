@@ -1,21 +1,38 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
 
-        <title>My Laravel App</title>
+<head>
+    <meta charset="utf-8" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>
+        {{ Src\Company\System\Infrastructure\EloquentModels\SiteSettingEloquentModel::find(1)->site_name ?? env('APP_NAME') }}
+    </title>
+    <link rel="icon" type="image/x-icon"
+        href="{{ Src\Company\System\Infrastructure\EloquentModels\SiteSettingEloquentModel::find(1)->getFirstMedia('fav_icon')->original_url ?? ' ' }}">
 
-        <link rel="stylesheet" type="text/css" href="{{ mix('css/app.css') }}">
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-md-8 offset-md-2">
-                    @yield('content')
-                </div>
-            </div>
-        </div>
-    </body>
+
+    @routes
+    @vite('resources/js/app.js')
+    @inertiaHead
+</head>
+<style>
+    *,
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+    }
+</style>
+
+<body>
+    @inertia
+
+    <script>
+        localStorage.setItem("_token", document.querySelector('meta[name="csrf-token"]').getAttribute('content'));
+    </script>
+</body>
+
 </html>

@@ -1,0 +1,14 @@
+[
+    {
+        "relation": [
+            "delegate_permission/common.handle_all_urls"
+        ],
+        "target": {
+            "namespace": "android_app",
+            "package_name": "com.praxis.pspace",
+            "sha256_cert_fingerprints": [
+                "87:60:DC:E6:D0:BA:AF:C4:53:98:84:24:CB:33:7E:26:56:BB:BF:F6:82:85:75:47:66:88:4D:2F:E2:DF:12:FB"
+            ]
+        }
+    }
+]
