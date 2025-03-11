@@ -57,10 +57,10 @@ services:
     ports:
       - "${MYSQL_PORT:-3306}:3306"
     environment:
-      - MYSQL_DATABASE=app
-      - MYSQL_USER=laravel
-      - MYSQL_PASSWORD=secret
-      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE: ${DB_DATABASE}
+      - MYSQL_USER: ${DB_USERNAME}
+      - MYSQL_PASSWORD: ${DB_PASSWORD}
+      - MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
     volumes:
       - mysql-data-production:/var/lib/mysql
     networks:
