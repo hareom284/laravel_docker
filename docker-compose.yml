@@ -1,3 +1,5 @@
+version: '3'
+
 networks:
   laravel:
 
@@ -6,7 +8,7 @@ services:
     image: nginx:stable-alpine
     container_name: nginx
     ports:
-      - "8005:80"
+      - "80:80"
     volumes:
       - .:/var/www/html
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
@@ -17,27 +19,21 @@ services:
       - laravel
 
   mysql:
-    image: mysql:8.0
+    image: mysql:5.7.29
     container_name: mysql
     restart: unless-stopped
     tty: true
     ports:
       - "3306:3306"
     environment:
-      MYSQL_DATABASE: laravel
+      MYSQL_DATABASE: homestead
       MYSQL_USER: homestead
-      MYSQL_PASSWORD: secret
-      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_PASSWORD: qPThHm6uKC2C2cS2Dudr6wUd
+      MYSQL_ROOT_PASSWORD: MrcD64kvz3aqSQhw2gJQzNYc
       SERVICE_TAGS: dev
       SERVICE_NAME: mysql
     networks:
       - laravel
-    healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
-      interval: 10s
-      retries: 5
-      start_period: 30s
-      timeout: 5s
 
   php:
     build:
@@ -46,9 +42,40 @@ services:
     container_name: php
     volumes:
       - .:/var/www/html
+    ports:
+      - "9000:9000"
     networks:
       - laravel
-    depends_on:
-      mysql:
-        condition: service_healthy
 
+  composer:
+    image: composer:latest
+    container_name: composer
+    volumes:
+      - .:/var/www/html
+    working_dir: /var/www/html
+    depends_on:
+      - php
+    networks:
+      - laravel
+
+  npm:
+    image: node:13.7
+    container_name: npm
+    volumes:
+      - .:/var/www/html
+    working_dir: /var/www/html
+    entrypoint: ['npm']
+
+  artisan:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: artisan
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      - mysql
+    working_dir: /var/www/html
+    entrypoint: ['php', '/var/www/html/artisan']
+    networks:
+      - laravel
